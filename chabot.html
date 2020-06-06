@@ -34,12 +34,20 @@ const jokes = ["My friend thinks he is smart. He told me an onion is the only fo
 "واحد بلديتنا راح امريكا لقى كل الشباب لابسين تشيرت مكتوب علية سفن اب كوكاكولا  بيبسي .. راح كتب على الجلابية عصير قصب.",
 "مرة دكتور تحليل امة ماتت قال تحاليلي ياما"];
 
+
+const colors = ["lightblue", "lightgray", "gold", "lightgreen", "crismon", "#eecc11", "tomato",
+"orange", "yellow", "white"];
+
 let timeNow = Date();
 const hello = answers[0];
 const askSupport = answers[1];
 const myDefault = answers[2];
 const survey = answers[3];
 const botName = answers[4];
+
+
+
+var indexDefault = 0;
 function chatbot() {
 
 /* next update will be less cases by using [in and arrays with less cases ] */
@@ -226,8 +234,13 @@ switch (user.value) {
     break;    
   default:
     bot.textContent = myDefault;
+    indexDefault += 1;
+    alert(indexDefault);
  }
 
+  if (indexDefault > 2) {
+    bot.style.background = colors[Math.floor(Math.random() * 8)];  
+  }
 }
 
 
@@ -240,3 +253,4 @@ switch (user.value) {
 
 </body>
 </html>
+
